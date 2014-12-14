@@ -1,0 +1,8 @@
+:javascript
+  document.addEventListener("touchmove", function(e){
+    e.preventDefault();
+  });
+  
+%ul.list
+  %li.item{:onclick => "supersonic.ui.drawers.close()"} Home
+  %li.item{:onclick => "supersonic.ui.drawers.close()"} My Profile

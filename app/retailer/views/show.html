@@ -1,0 +1,38 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Show
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="retailer['createdAt']"></h2>
+      
+      
+      
+       <p>name: <span ng-bind="retailer['name']"></span></p> 
+      
+       <p>objectId: <span ng-bind="retailer['objectId']"></span></p> 
+      
+       <p>place_id: <span ng-bind="retailer['place_id']"></span></p> 
+      
+       <p>request_count: <span ng-bind="retailer['request_count']"></span></p> 
+      
+       <p>updatedAt: <span ng-bind="retailer['updatedAt']"></span></p> 
+      
+
+
+      <super-modal-show location="retailer#edit?id={{ retailer.id }}">
+        <button class="button button-block button-positive">
+          Edit
+        </button>
+      </super-modal-show>
+
+      <button ng-click="remove(retailer.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

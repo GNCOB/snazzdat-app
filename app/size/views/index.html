@@ -1,0 +1,31 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      Size Index
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+    <ul class="list" ng-hide="sizes.length == 0">
+
+      <super-navigate location="size#show" data-params-id="{{ size.id }}" ng-repeat="size in sizes">
+        <li class="item item-icon-right">
+          <span ng-bind="size['body_shape_code']"></span>
+          <i class="icon super-ios7-arrow-right"></i>
+        </li>
+      </super-navigate>
+
+    </ul>
+
+    <h4 ng-show="sizes.length == 0" class="assertive padding">
+      No sizes found. Create one?
+    </h4>
+
+    <super-modal-show location="size#new">
+      <button class="button button-full button-positive">
+        Create a new size
+      </button>
+    </super-modal-show>
+  </div>
+</div>

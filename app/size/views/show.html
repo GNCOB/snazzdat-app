@@ -1,0 +1,54 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Show
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="size['body_shape_code']"></h2>
+      
+      
+      
+       <p>bust: <span ng-bind="size['bust']"></span></p> 
+      
+       <p>chest: <span ng-bind="size['chest']"></span></p> 
+      
+       <p>createdAt: <span ng-bind="size['createdAt']"></span></p> 
+      
+       <p>height: <span ng-bind="size['height']"></span></p> 
+      
+       <p>hips: <span ng-bind="size['hips']"></span></p> 
+      
+       <p>inseam: <span ng-bind="size['inseam']"></span></p> 
+      
+       <p>neck: <span ng-bind="size['neck']"></span></p> 
+      
+       <p>objectId: <span ng-bind="size['objectId']"></span></p> 
+      
+       <p>sleeve: <span ng-bind="size['sleeve']"></span></p> 
+      
+       <p>updatedAt: <span ng-bind="size['updatedAt']"></span></p> 
+      
+       <p>user: <span ng-bind="size['user']"></span></p> 
+      
+       <p>waist: <span ng-bind="size['waist']"></span></p> 
+      
+       <p>weight: <span ng-bind="size['weight']"></span></p> 
+      
+
+
+      <super-modal-show location="size#edit?id={{ size.id }}">
+        <button class="button button-block button-positive">
+          Edit
+        </button>
+      </super-modal-show>
+
+      <button ng-click="remove(size.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
